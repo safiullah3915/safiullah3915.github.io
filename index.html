@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safi Ullah — Researcher</title>
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --accent: #16213e;
+      --link: #0f4c81;
+      --border: #c9c9c9;
+      --bg: #ffffff;
+      --text: #222;
+      --muted: #555;
+      --light-bg: #f7f8fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 40px 0 36px;
+    }
+    header .header-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+    }
+    header img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 3px solid rgba(255,255,255,0.2);
+    }
+    header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+    header .title {
+      font-size: 16px;
+      color: #b0b8c8;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    header .contact-info {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 13.5px;
+      color: #ccd0d9;
+      line-height: 2;
+    }
+    header .contact-info a {
+      color: #8ab4f8;
+    }
+    header .contact-info a:hover {
+      color: #fff;
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--accent);
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0;
+      justify-content: center;
+    }
+    nav a {
+      display: block;
+      padding: 10px 14px;
+      color: #c9d1d9;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 12.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.07);
+      text-decoration: none;
+    }
+
+    /* Sections */
+    section {
+      padding: 36px 0 28px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    section:last-of-type {
+      border-bottom: none;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      border-left: 4px solid var(--link);
+      padding-left: 12px;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: var(--primary);
+    }
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+    p { margin-bottom: 12px; }
+
+    .entry { margin-bottom: 22px; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .entry-date {
+      font-size: 14px;
+      color: var(--muted);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      white-space: nowrap;
+    }
+
+    ul.details {
+      list-style: disc;
+      margin-left: 22px;
+      margin-top: 6px;
+    }
+    ul.details li {
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+
+    .pub-item {
+      margin-bottom: 14px;
+      padding-left: 18px;
+      border-left: 2px solid #d0d0d0;
+    }
+    .pub-title {
+      font-style: italic;
+    }
+    .pub-status {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 6px 20px;
+      font-size: 15px;
+    }
+    .skills-grid dt {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 14px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    .skills-grid dd {
+      margin: 0;
+    }
+
+    .cert-item {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+    .cert-item .cert-org {
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+
+    .highlight-box {
+      background: var(--light-bg);
+      border: 1px solid #e0e3e8;
+      border-radius: 3px;
+      padding: 14px 18px;
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 0;
+      font-size: 13px;
+      color: var(--muted);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    @media (max-width: 640px) {
+      header .header-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .entry-header {
+        flex-direction: column;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <img src="me3.jpg" alt="Safi Ullah">
+      <div>
+        <h1>Safi Ullah</h1>
+        <div class="title">Researcher &amp; Software Engineer</div>
+        <div class="contact-info">
+          <a href="mailto:safiullah.3913@gmail.com">safiullah.3913@gmail.com</a><br>
+          <a href="https://github.com/safiullah3915">GitHub</a> &middot;
+          <a href="https://linkedin.com/in/safi-ullah-3031b5245">LinkedIn</a> &middot;
+          <a href="https://scholar.google.com/">Google Scholar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== NAV ========== -->
+<nav>
+  <div class="container">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#honors">Honors</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+
+<!-- ========== ABOUT / BIO ========== -->
+<section id="about">
+  <h2>About</h2>
+  <p>
+    I am a researcher and software engineer based in Islamabad, Pakistan. I hold a Bachelor of Science in Computer Science from
+    <strong>Quaid-i-Azam University</strong> (CGPA: 3.60/4.00, graduated November 2025) and currently work as a Software Engineer at the
+    <strong>National Aerospace Science &amp; Technology Park (NASTP)</strong>, where I develop AI-integrated automation systems for
+    aerospace and critical-infrastructure applications.
+  </p>
+  <p>
+    My research focuses on understanding and improving the robustness and generalization of machine learning systems under distribution shift.
+    I am particularly interested in <strong>transfer learning</strong> and <strong>domain adaptation</strong> across sequential and relational data,
+    drawing on attention-based and graph neural network architectures. My work emphasizes building trustworthy AI for high-stakes and
+    critical-infrastructure settings.
+  </p>
+  <p>
+    I am actively seeking Ph.D. opportunities in the United States for Fall 2026, aiming to pursue research at the intersection
+    of robust machine learning, domain adaptation, and AI for critical systems.
+  </p>
+</section>
+
+<!-- ========== RESEARCH INTERESTS ========== -->
+<section id="research">
+  <h2>Research Interests</h2>
+  <ul class="details">
+    <li>Robustness and generalization of ML systems under distribution shift</li>
+    <li>Transfer learning and domain adaptation across sequential and relational data</li>
+    <li>Attention-based and graph neural network architectures</li>
+    <li>Trustworthy AI for high-stakes and critical-infrastructure systems</li>
+    <li>Cross-domain knowledge transfer in financial and security applications</li>
+    <li>Adversarial domain adaptation and domain-shift quantification (MMD)</li>
+  </ul>
+
+  <h3 style="margin-top: 24px;">Current Research</h3>
+  <div class="entry">
+    <div class="entry-header">
+      <h3>Cross-Market Equity Transfer Learning</h3>
+      <span class="entry-date">Dec 2025 &ndash; Present</span>
+    </div>
+    <div class="meta">Quaid-i-Azam University, Islamabad, Pakistan</div>
+    <ul class="details">
+      <li>Designed a six-stage end-to-end ML pipeline for cross-market transfer learning between India (NSE/BSE, 16 companies) and Pakistan (PSX, 15 companies) across four sectors, covering 125,668 daily observations over a 23-year window (2000&ndash;2023).</li>
+      <li>Proposed a <strong>CNN-BiLSTM-Attention</strong> architecture with causally-padded convolutions, correcting temporal-leakage issues present in standard zero-padding implementations used by prior financial forecasting systems.</li>
+      <li>Identified a <strong>first-documented directional transfer asymmetry</strong> (+2.06 pp, Pakistan&rarr;India) through a five-scenario evaluation framework: full-market pooling, sector-conditioned 4&times;4 Transferability Matrix, and progressive fine-tuning experiments.</li>
+      <li>Applied Maximum Mean Discrepancy (MMD) domain-shift analysis across all 16 sector combinations; confirmed near-random directional accuracy consistent with semi-strong Efficient Market Hypothesis in South Asian emerging markets.</li>
+      <li>Validated findings with Friedman test, Bonferroni-corrected Wilcoxon signed-rank tests (<em>n</em>&nbsp;=&nbsp;31), and Cohen's <em>d</em> effect sizes, ensuring statistical rigor suitable for peer-reviewed submission.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== PUBLICATIONS ========== -->
+<section id="publications">
+  <h2>Publications &amp; Manuscripts</h2>
+  <div class="pub-item">
+    <strong>S. Ullah.</strong>
+    <span class="pub-title">&ldquo;Cross-Market Transfer Learning for Equity Price Prediction: An Empirical Study of India&ndash;Pakistan Transfer Dynamics.&rdquo;</span><br>
+    <span class="pub-status">Manuscript under preparation &middot; 2025</span>
+    <ul class="details" style="margin-top: 6px;">
+      <li>First systematic empirical study of cross-market transfer learning between Indian and Pakistani equity markets.</li>
+      <li>Compares six model families (Na&iuml;ve Persistence, ARIMA, XGBoost, Vanilla LSTM, Vanilla GRU, and the proposed CNN-BiLSTM-Attention) across 32 companies, four sectors, and five transfer scenarios.</li>
+      <li>Contributions include a novel five-scenario transfer framework, first-documented directional transfer asymmetry, a 4&times;4 sector transferability matrix, and MMD-based domain-shift analysis.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== PROFESSIONAL EXPERIENCE ========== -->
+<section id="experience">
+  <h2>Professional Experience</h2>
+
+  <div class="entry">
+    <div class="entry-header">
+      <h3>Software Engineer</h3>
+      <span class="entry-date">Jun 2025 &ndash; Present</span>
+    </div>
+    <div class="meta">National Aerospace Science &amp; Technology Park (NASTP), Islamabad, Pakistan</div>
+    <ul class="details">
+      <li>Engineered Python-based automation tools for aerospace and critical protection systems, streamlining multi-step operational workflows and reducing manual intervention overhead.</li>
+      <li>Integrated on-premise deep learning and AI models into mission-critical applications, enabling intelligent decision support without external API dependencies.</li>
+      <li>Contributed to Qt QML/C++ desktop application development for high-priority security systems, focusing on performance, security, and maintainability requirements.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <h3>AI Engineer Intern</h3>
+      <span class="entry-date">Jun &ndash; Jul 2024</span>
+    </div>
+    <div class="meta">DTtools AI, Islamabad, Pakistan</div>
+    <ul class="details">
+      <li>Developed AI-powered applications integrating computer-vision and NLP models via REST APIs; deployed interactive user interfaces using Streamlit, Tkinter, and Flask.</li>
+      <li>Built a computer-vision pipeline classifying user mental states from eye-feature biomarkers using TensorFlow and OpenCV, contributing to a live product feature.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <h3>Software Intern</h3>
+      <span class="entry-date">Jul &ndash; Aug 2023</span>
+    </div>
+    <div class="meta">Technevity, Islamabad, Pakistan</div>
+    <ul class="details">
+      <li>Developed an Interview Management System using ASP.NET MVC, C#, and Entity Framework; optimised SQL Server queries to improve HR data retrieval performance.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== TEACHING ========== -->
+<section id="teaching">
+  <h2>Teaching Experience</h2>
+
+  <div class="entry">
+    <div class="entry-header">
+      <h3>Teaching Assistant &mdash; Introduction to Artificial Intelligence</h3>
+      <span class="entry-date">Oct 2024 &ndash; Feb 2025</span>
+    </div>
+    <div class="meta">Quaid-i-Azam University, Islamabad, Pakistan</div>
+    <ul class="details">
+      <li>Designed and delivered lab sessions on AI search algorithms (A*, UCS, BFS/DFS), supervised/unsupervised learning (SVM, Random Forest, K-Means, PCA), and deep learning fundamentals (backpropagation, regularisation) in Python and TensorFlow.</li>
+      <li>Mentored 30+ undergraduate students through complete ML workflows &mdash; data preprocessing, cross-validation, hyperparameter tuning, and performance evaluation.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
+      <h3>Workshop Instructor &mdash; Google Gemini AI (3-Day Workshop)</h3>
+      <span class="entry-date">2024</span>
+    </div>
+    <div class="meta">Invited by Google Developer Student Club</div>
+    <ul class="details">
+      <li>Conducted a comprehensive 3-day hands-on workshop on Google Gemini, covering multimodal AI capabilities, prompt engineering, API integration, and building AI-powered applications.</li>
+      <li>Delivered technical sessions to university students and developers, demonstrating practical use-cases of large language models and generative AI in real-world software development.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== EDUCATION ========== -->
+<section id="education">
+  <h2>Education</h2>
+  <div class="entry">
+    <div class="entry-header">
+      <h3>Bachelor of Science in Computer Science</h3>
+      <span class="entry-date">Nov 2021 &ndash; Nov 2025</span>
+    </div>
+    <div class="meta">Quaid-i-Azam University, Islamabad, Pakistan &middot; CGPA: 3.60 / 4.00</div>
+    <p style="font-size: 15px; margin-top: 6px;">
+      <strong>Relevant Coursework:</strong> Algorithms &amp; Data Structures, Artificial Intelligence, Machine Learning, Operating Systems,
+      Database Systems, Software Engineering, Computer Graphics, Theory of Automata, Web Development.
+    </p>
+    <p style="font-size: 15px;">
+      <strong>Final-Year Project:</strong> <em>StartLnk</em> &mdash; AI-powered startup networking platform; led product development, platform architecture, and deployment.
+    </p>
+  </div>
+</section>
+
+<!-- ========== SELECTED PROJECTS ========== -->
+<section id="projects">
+  <h2>Selected Projects</h2>
+
+  <div class="entry">
+    <h3>StartLink &mdash; AI-Powered Startup Ecosystem Platform</h3>
+    <div class="meta">Python &middot; Django REST Framework &middot; React.js &middot; PostgreSQL &middot; TensorFlow Lite &middot; Docker</div>
+    <ul class="details">
+      <li>Architected a full-stack platform connecting entrepreneurs, investors, and collaborators; implemented an AI recommendation engine (scikit-learn, TF Lite) surfacing relevant startups based on interaction history and interest profiles.</li>
+      <li>Built scalable REST APIs, real-time messaging, investor-matching, and team-formation workflows with Django backend and React + Tailwind CSS frontend.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <h3>Cross-Network Intrusion Detection with Graph Neural Networks</h3>
+    <div class="meta">Python &middot; PyTorch Geometric &middot; GraphSAGE &middot; Domain Adaptation &middot; NetFlow v2</div>
+    <ul class="details">
+      <li>Modeled network traffic as flow graphs and trained an edge-feature GraphSAGE classifier achieving high within-dataset detection accuracy across NF-UNSW-NB15 and NF-CSE-CIC-IDS2018 benchmark traffic.</li>
+      <li>Quantified severe cross-network performance degradation under naive transfer and applied adversarial domain adaptation to recover detection accuracy, validating gains with Friedman, Wilcoxon, and Cohen's <em>d</em> statistical tests.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <h3>Virtual Try-On Web Application</h3>
+    <div class="meta">Python &middot; Hugging Face Diffusion Models &middot; Streamlit &middot; Transfer Learning</div>
+    <ul class="details">
+      <li>Fine-tuned a diffusion-based virtual garment try-on model to improve photorealistic fitting accuracy; deployed as an interactive Streamlit application with real-time image upload and garment selection.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <h3>Eye-Gaze Mental State Predictor</h3>
+    <div class="meta">Python &middot; TensorFlow &middot; OpenCV &middot; Computer Vision</div>
+    <ul class="details">
+      <li>Trained a supervised deep-learning classifier from scratch to predict mental states (stress/calm) from eye-feature biomarkers; applied advanced preprocessing and augmentation pipelines to optimise classification accuracy.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== HONORS & AWARDS ========== -->
+<section id="honors">
+  <h2>Honors, Awards &amp; Achievements</h2>
+
+  <div class="highlight-box">
+    <strong>2nd Place &mdash; Hackathon, FAST National University</strong><br>
+    Awarded second position in a competitive university-level hackathon at FAST-NUCES, demonstrating strong problem-solving, rapid prototyping, and team collaboration under time constraints.
+  </div>
+
+  <div class="highlight-box">
+    <strong>Invited Workshop Instructor &mdash; Google Gemini AI (3-Day Workshop)</strong><br>
+    Invited by the Google Developer Student Club to design and deliver a comprehensive 3-day workshop on Google Gemini, covering hands-on multimodal AI application development for university students and developers.
+  </div>
+
+  <div class="highlight-box">
+    <strong>Certificate of Appreciation &mdash; Pakistan Japan Centre for Mutual Cooperation</strong>
+    <span style="float:right; font-size:13px; color:#888;">Apr 2023</span><br>
+    Awarded for completion of Data Science Workshop: supervised/unsupervised ML algorithms and cloud-based model deployment.
+  </div>
+
+  <h3 style="margin-top: 24px;">Certifications &amp; Training</h3>
+  <div class="cert-item">
+    <strong>Machine Learning Specialization</strong> (Supervised, Advanced, Unsupervised Learning)<br>
+    <span class="cert-org">Andrew Ng, Coursera &middot; 2023</span>
+  </div>
+  <div class="cert-item">
+    <strong>LangChain for LLM Application Development</strong><br>
+    <span class="cert-org">DeepLearning.AI &middot; 2023</span>
+  </div>
+  <div class="cert-item">
+    <strong>ChatGPT Prompt Engineering for Developers</strong><br>
+    <span class="cert-org">DeepLearning.AI &middot; 2023</span>
+  </div>
+  <div class="cert-item">
+    <strong>Certified Cloud Applied Generative AI Engineer</strong><br>
+    <span class="cert-org">PIAIC (Presidential Initiative for AI and Computing), Pakistan &middot; 2023&ndash;2024</span>
+  </div>
+</section>
+
+<!-- ========== TECHNICAL SKILLS ========== -->
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <dl class="skills-grid">
+    <dt>Languages</dt>
+    <dd>Python, C++, C#, Java, JavaScript, TypeScript, HTML/CSS</dd>
+    <dt>AI / ML &amp; Deep Learning</dt>
+    <dd>TensorFlow, Keras, PyTorch, scikit-learn, Hugging Face Transformers, LangChain, OpenCV</dd>
+    <dt>Data Science &amp; Statistics</dt>
+    <dd>NumPy, Pandas, Matplotlib, Seaborn, SciPy, Hypothesis Testing, Effect-Size Analysis, MMD</dd>
+    <dt>Web Technologies</dt>
+    <dd>Django REST Framework, Flask, React.js, Tailwind CSS, ASP.NET MVC, REST APIs, Streamlit</dd>
+    <dt>Databases</dt>
+    <dd>PostgreSQL, MySQL, Firebase, SQL Server, SQLite</dd>
+    <dt>Tools &amp; Platforms</dt>
+    <dd>Git, Docker, Jupyter, Google Colab, Linux/Bash, VS Code, Overleaf/LaTeX</dd>
+  </dl>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    &copy; 2025 Safi Ullah. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
