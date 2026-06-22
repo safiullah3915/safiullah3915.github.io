@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Safi Ullah — Researcher</title>
+  <title>Safi Ullah — Software Engineer & ML Researcher</title>
   <style>
     :root {
       --primary: #1a1a2e;
@@ -250,12 +250,14 @@
       <img src="me3.jpg" alt="Safi Ullah">
       <div>
         <h1>Safi Ullah</h1>
-        <div class="title">Researcher &amp; Software Engineer</div>
+        <div class="title">Software Engineer &amp; Machine Learning Researcher</div>
         <div class="contact-info">
           <a href="mailto:safiullah.3913@gmail.com">safiullah.3913@gmail.com</a><br>
           <a href="https://github.com/safiullah3915">GitHub</a> &middot;
-          <a href="https://linkedin.com/in/safi-ullah-3031b5245">LinkedIn</a> &middot;
-          <a href="https://scholar.google.com/">Google Scholar</a>
+          <a href="https://linkedin.com/in/safi-ullah-3031b5245">LinkedIn</a>
+        </div>
+        <div style="margin-top: 12px;">
+          <a href="/cv.pdf" style="display: inline-block; padding: 6px 16px; background: rgba(255,255,255,0.12); color: #8ab4f8; border: 1px solid rgba(255,255,255,0.2); border-radius: 3px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 13px; text-decoration: none;">&#128196; Download CV (PDF)</a>
         </div>
       </div>
     </div>
@@ -297,21 +299,31 @@
   </p>
   <p>
     I am actively seeking Ph.D. opportunities in the United States for Fall 2026, aiming to pursue research at the intersection
-    of robust machine learning, domain adaptation, and AI for critical systems.
+    of robust machine learning, domain adaptation, and trustworthy AI for high-stakes domains such as healthcare, finance, and critical infrastructure.
   </p>
 </section>
 
 <!-- ========== RESEARCH INTERESTS ========== -->
 <section id="research">
-  <h2>Research Interests</h2>
+  <h2>Research</h2>
+  <p>
+    My research centers on understanding why machine learning models fail to generalize across institutions, markets, and distributions, and on building diagnostic tools that catch this failure before deployment.
+  </p>
+
+  <h3 style="margin-top: 20px;">Research Interests</h3>
   <ul class="details">
     <li>Robustness and generalization of ML systems under distribution shift</li>
     <li>Transfer learning and domain adaptation across sequential and relational data</li>
     <li>Attention-based and graph neural network architectures</li>
     <li>Trustworthy AI for high-stakes and critical-infrastructure systems</li>
-    <li>Cross-domain knowledge transfer in financial and security applications</li>
+    <li>Cross-domain knowledge transfer in high-stakes real-world applications, including finance, security, and healthcare</li>
     <li>Adversarial domain adaptation and domain-shift quantification (MMD)</li>
   </ul>
+
+  <h3 style="margin-top: 24px;">Research Vision</h3>
+  <p>
+    The cross-market transfer learning work below is one instance of a broader question I am interested in: when and why does a model&rsquo;s measured performance fail to transfer once the underlying data distribution shifts. The same diagnostic toolkit used there, Maximum Mean Discrepancy-based distributional distance measures paired with Friedman testing, Bonferroni-corrected Wilcoxon signed-rank tests, and Cohen&rsquo;s <em>d</em> effect sizes, applies just as naturally to other high-stakes settings, including treatment-effect estimation and diagnostic prediction in healthcare, training-data composition effects in foundation model evaluation, and the relationship between model multiplicity and distribution shift in interpretable machine learning. I am interested in extending this statistical-rigor-first approach to whichever domain a given research group is already working in, rather than treating finance as the only setting where these questions matter.
+  </p>
 
   <h3 style="margin-top: 24px;">Current Research</h3>
   <div class="entry">
@@ -341,6 +353,17 @@
       <li>First systematic empirical study of cross-market transfer learning between Indian and Pakistani equity markets.</li>
       <li>Compares six model families (Na&iuml;ve Persistence, ARIMA, XGBoost, Vanilla LSTM, Vanilla GRU, and the proposed CNN-BiLSTM-Attention) across 32 companies, four sectors, and five transfer scenarios.</li>
       <li>Contributions include a novel five-scenario transfer framework, first-documented directional transfer asymmetry, a 4&times;4 sector transferability matrix, and MMD-based domain-shift analysis.</li>
+    </ul>
+  </div>
+
+  <div class="pub-item">
+    <strong>S. Ullah.</strong>
+    <span class="pub-title">&ldquo;Cross-Network Intrusion Detection under Distribution Shift: A Graph Neural Network Approach with Adversarial Domain Adaptation.&rdquo;</span><br>
+    <span class="pub-status">Manuscript in preparation &middot; 2025</span>
+    <ul class="details" style="margin-top: 6px;">
+      <li>Models network traffic as flow graphs and trains an edge-feature GraphSAGE classifier across two benchmark intrusion-detection datasets (NF-UNSW-NB15, NF-CSE-CIC-IDS2018).</li>
+      <li>Quantifies severe cross-network performance degradation under naive transfer and recovers detection accuracy through adversarial domain adaptation.</li>
+      <li>Validates gains with Friedman tests, Bonferroni-corrected Wilcoxon signed-rank tests, and Cohen&rsquo;s <em>d</em> effect sizes.</li>
     </ul>
   </div>
 </section>
@@ -439,22 +462,26 @@
   <h2>Selected Projects</h2>
 
   <div class="entry">
-    <h3>StartLink &mdash; AI-Powered Startup Ecosystem Platform</h3>
-    <div class="meta">Python &middot; Django REST Framework &middot; React.js &middot; PostgreSQL &middot; TensorFlow Lite &middot; Docker</div>
-    <ul class="details">
-      <li>Architected a full-stack platform connecting entrepreneurs, investors, and collaborators; implemented an AI recommendation engine (scikit-learn, TF Lite) surfacing relevant startups based on interaction history and interest profiles.</li>
-      <li>Built scalable REST APIs, real-time messaging, investor-matching, and team-formation workflows with Django backend and React + Tailwind CSS frontend.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
     <h3>Cross-Network Intrusion Detection with Graph Neural Networks</h3>
     <div class="meta">Python &middot; PyTorch Geometric &middot; GraphSAGE &middot; Domain Adaptation &middot; NetFlow v2</div>
     <ul class="details">
       <li>Modeled network traffic as flow graphs and trained an edge-feature GraphSAGE classifier achieving high within-dataset detection accuracy across NF-UNSW-NB15 and NF-CSE-CIC-IDS2018 benchmark traffic.</li>
       <li>Quantified severe cross-network performance degradation under naive transfer and applied adversarial domain adaptation to recover detection accuracy, validating gains with Friedman, Wilcoxon, and Cohen's <em>d</em> statistical tests.</li>
     </ul>
+    <p style="margin-top: 6px; font-size: 14px;"><a href="ACTUAL_REPO_URL_HERE">View on GitHub &rarr;</a></p>
   </div>
+
+  <div class="entry">
+    <h3>StartLink &mdash; AI-Powered Startup Ecosystem Platform</h3>
+    <div class="meta">Python &middot; Django REST Framework &middot; React.js &middot; PostgreSQL &middot; TensorFlow Lite &middot; Docker</div>
+    <ul class="details">
+      <li>Architected a full-stack platform connecting entrepreneurs, investors, and collaborators; implemented an AI recommendation engine (scikit-learn, TF Lite) surfacing relevant startups based on interaction history and interest profiles.</li>
+      <li>Built scalable REST APIs, real-time messaging, investor-matching, and team-formation workflows with Django backend and React + Tailwind CSS frontend.</li>
+    </ul>
+    <p style="margin-top: 6px; font-size: 14px;"><a href="ACTUAL_REPO_URL_HERE">View on GitHub &rarr;</a></p>
+  </div>
+
+  <h3 style="margin-top: 28px; margin-bottom: 16px;">Other Projects</h3>
 
   <div class="entry">
     <h3>Virtual Try-On Web Application</h3>
@@ -462,6 +489,7 @@
     <ul class="details">
       <li>Fine-tuned a diffusion-based virtual garment try-on model to improve photorealistic fitting accuracy; deployed as an interactive Streamlit application with real-time image upload and garment selection.</li>
     </ul>
+    <p style="margin-top: 6px; font-size: 14px;"><a href="ACTUAL_REPO_URL_HERE">View on GitHub &rarr;</a></p>
   </div>
 
   <div class="entry">
@@ -470,6 +498,7 @@
     <ul class="details">
       <li>Trained a supervised deep-learning classifier from scratch to predict mental states (stress/calm) from eye-feature biomarkers; applied advanced preprocessing and augmentation pipelines to optimise classification accuracy.</li>
     </ul>
+    <p style="margin-top: 6px; font-size: 14px;"><a href="ACTUAL_REPO_URL_HERE">View on GitHub &rarr;</a></p>
   </div>
 </section>
 
@@ -482,10 +511,7 @@
     Awarded second position in a competitive university-level hackathon at FAST-NUCES, demonstrating strong problem-solving, rapid prototyping, and team collaboration under time constraints.
   </div>
 
-  <div class="highlight-box">
-    <strong>Invited Workshop Instructor &mdash; Google Gemini AI (3-Day Workshop)</strong><br>
-    Invited by the Google Developer Student Club to design and deliver a comprehensive 3-day workshop on Google Gemini, covering hands-on multimodal AI application development for university students and developers.
-  </div>
+
 
   <div class="highlight-box">
     <strong>Certificate of Appreciation &mdash; Pakistan Japan Centre for Mutual Cooperation</strong>
@@ -494,40 +520,27 @@
   </div>
 
   <h3 style="margin-top: 24px;">Certifications &amp; Training</h3>
-  <div class="cert-item">
-    <strong>Machine Learning Specialization</strong> (Supervised, Advanced, Unsupervised Learning)<br>
-    <span class="cert-org">Andrew Ng, Coursera &middot; 2023</span>
-  </div>
-  <div class="cert-item">
-    <strong>LangChain for LLM Application Development</strong><br>
-    <span class="cert-org">DeepLearning.AI &middot; 2023</span>
-  </div>
-  <div class="cert-item">
-    <strong>ChatGPT Prompt Engineering for Developers</strong><br>
-    <span class="cert-org">DeepLearning.AI &middot; 2023</span>
-  </div>
-  <div class="cert-item">
-    <strong>Certified Cloud Applied Generative AI Engineer</strong><br>
-    <span class="cert-org">PIAIC (Presidential Initiative for AI and Computing), Pakistan &middot; 2023&ndash;2024</span>
-  </div>
+  <p style="font-size: 15px;">
+    <strong>Certifications:</strong> Machine Learning Specialization (Andrew Ng, Coursera, 2023) &middot; LangChain for LLM Application Development (DeepLearning.AI, 2023) &middot; ChatGPT Prompt Engineering for Developers (DeepLearning.AI, 2023) &middot; Certified Cloud Applied Generative AI Engineer (PIAIC, 2023&ndash;2024)
+  </p>
 </section>
 
 <!-- ========== TECHNICAL SKILLS ========== -->
 <section id="skills">
   <h2>Technical Skills</h2>
   <dl class="skills-grid">
-    <dt>Languages</dt>
-    <dd>Python, C++, C#, Java, JavaScript, TypeScript, HTML/CSS</dd>
     <dt>AI / ML &amp; Deep Learning</dt>
     <dd>TensorFlow, Keras, PyTorch, scikit-learn, Hugging Face Transformers, LangChain, OpenCV</dd>
     <dt>Data Science &amp; Statistics</dt>
     <dd>NumPy, Pandas, Matplotlib, Seaborn, SciPy, Hypothesis Testing, Effect-Size Analysis, MMD</dd>
+    <dt>Languages</dt>
+    <dd>Python, C++, C#, Java, JavaScript, TypeScript, HTML/CSS</dd>
+    <dt>Tools &amp; Platforms</dt>
+    <dd>Git, Docker, Jupyter, Google Colab, Linux/Bash, VS Code, Overleaf/LaTeX</dd>
     <dt>Web Technologies</dt>
     <dd>Django REST Framework, Flask, React.js, Tailwind CSS, ASP.NET MVC, REST APIs, Streamlit</dd>
     <dt>Databases</dt>
     <dd>PostgreSQL, MySQL, Firebase, SQL Server, SQLite</dd>
-    <dt>Tools &amp; Platforms</dt>
-    <dd>Git, Docker, Jupyter, Google Colab, Linux/Bash, VS Code, Overleaf/LaTeX</dd>
   </dl>
 </section>
 
@@ -535,7 +548,7 @@
 
 <footer>
   <div class="container">
-    &copy; 2025 Safi Ullah. All rights reserved.
+    &copy; 2025&ndash;2026 Safi Ullah. All rights reserved.
   </div>
 </footer>
 
